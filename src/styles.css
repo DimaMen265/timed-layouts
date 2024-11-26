@@ -1,0 +1,531 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.timer {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #333;
+  padding: 10px 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    background-color: #333;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #555;
+    transform: scale(1.05);
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header,
+.footer {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.hidden {
+  opacity: 0;
+  display: none;
+}
+
+.visible {
+  opacity: 1;
+  display: block;
+}
+
+.rakuten-header,
+.next-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: inherit;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.rakuten-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  font-family: Arial, sans-serif;
+}
+
+.top-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-section .logo {
+  font-size: 24px;
+  color: red;
+  font-weight: bold;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  margin: 0 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  font-size: 14px;
+}
+
+.search-bar button {
+  padding: 8px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.bottom-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.bottom-section .sell,
+.bottom-section .help,
+.bottom-section .categories {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+.bottom-section a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+.bottom-section .favorites {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.bottom-section .cart {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.next-header {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+}
+
+.next-header .top-section {
+  display: flex;
+  justify-content: center;
+}
+
+.next-header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.next-header .search-bar {
+  display: flex;
+  align-items: center;
+  flex-grow: 0;
+}
+
+.next-header .search-bar input {
+  padding: 0 8px;
+  width: 100%;
+  height: 32px;
+  max-width: 300px;
+  border-radius: 5px 0 0 5px;
+  border: none;
+}
+
+.next-header .search-bar button {
+  padding: 0 12px;
+  height: 32px;
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.next-header .nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 10px 0;
+  margin: 0;
+  flex: 3;
+}
+
+.next-header .nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.next-header .nav-links li a.highlight {
+  color: goldenrod;
+  font-weight: bold;
+}
+
+.next-header .nav-links li a.red {
+  color: red;
+  font-weight: bold;
+}
+
+.next-header .user-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.next-header .user-actions a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.next-header .user-actions .cart {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.next-header .user-actions .cart span {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.next-header .checkout-button {
+  padding: 8px 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.rakuten-footer {
+  background-color: #fff;
+  font-size: 14px;
+  color: #333;
+  padding: 10px 20px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.footer-top .service-item {
+  text-align: center;
+}
+
+.footer-top .service-item p {
+  margin: 5px 0;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.footer-links .column {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.footer-links .column h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-links .column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links .column ul li {
+  margin-bottom: 5px;
+}
+
+.footer-links .column ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.social-icons {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.payment-methods {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.payment-methods a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-bottom .apps a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.footer-bottom .legal {
+  margin-top: 10px;
+}
+
+.footer-bottom .legal select {
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.next-footer {
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  color: #333;
+  font-size: 14px;
+}
+
+.next-footer .footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.next-footer .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.next-footer .footer-links .column {
+  flex: 1 1 calc(25% - 20px);
+  min-width: 200px;
+}
+
+.next-footer .footer-links .column h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.next-footer .footer-links .column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.next-footer .footer-links .column ul li {
+  margin-bottom: 5px;
+}
+
+.next-footer .footer-links .column ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.next-footer .footer-links .column ul li a:hover {
+  color: #007bff;
+}
+
+.next-footer .footer-bottom {
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+.next-footer .footer-bottom a {
+  text-decoration: none;
+  color: green;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.next-footer .footer-bottom p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 36px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .rakuten-header,
+  .next-header {
+    text-align: center;
+  }
+
+  .top-section,
+  .bottom-section {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .search-bar input {
+    width: calc(100% - 60px);
+  }
+
+  .user-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .timer {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+
+  .next-header {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .next-header .search-bar {
+    order: 1;
+    margin-bottom: 10px;
+  }
+
+  .next-header .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    order: 2;
+  }
+
+  .next-header .user-actions {
+    justify-content: center;
+    order: 3;
+  }
+
+  .next-footer .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rakuten-header,
+  .next-header {
+    padding: 10px;
+  }
+
+  .search-bar input {
+    width: calc(100% - 40px);
+  }
+
+  .content {
+    font-size: 14px;
+  }
+
+  .timer {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .next-header {
+    padding: 10px;
+  }
+
+  .next-header .search-bar input {
+    width: calc(100% - 40px);
+  }
+
+  .next-footer .footer-links .column {
+    flex: 1 1 100%;
+  }
+}
