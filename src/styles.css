@@ -10,7 +10,7 @@ body {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  padding: 20px;
+  padding: 100px 20px 20px;
 }
 
 .timer {
@@ -498,6 +498,12 @@ body {
   }
 }
 
+@media (max-width: 620px) {
+  .content {
+    padding-top: 140px;
+  }
+}
+
 @media (max-width: 480px) {
   .rakuten-header,
   .next-header {
@@ -506,10 +512,6 @@ body {
 
   .search-bar input {
     width: calc(100% - 40px);
-  }
-
-  .content {
-    font-size: 14px;
   }
 
   .timer {
